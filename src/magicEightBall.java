@@ -5,14 +5,12 @@ import java.util.Random;
 public class magicEightBall {
 
     public static void main(String[]args){
-
         // Ask if user wants to play
         Scanner input = new Scanner(System.in);
         String playAgain = "";
 
         System.out.println("Do you have a question for the Magic 8-Ball? (y/n)");
         playAgain = input.nextLine();
-        System.out.println();
 
         // Loop for as long as the answer is not "n"
         while (!playAgain.equalsIgnoreCase("n")){
@@ -20,28 +18,22 @@ public class magicEightBall {
             // Prompt the user for a question
             System.out.println("What is your question?");
             String userQuestion = input.nextLine();
-            System.out.println();
-            System.out.println("YOU ASKED: " + userQuestion + "\n");
+            System.out.println("You asked: " + userQuestion);
 
             // Call magicEightBall method that will pick a random selection
             // from the String array of possible responses
             String str = modifiedMagicEight();
-
-            // Print the statements
-            System.out.println("YOU ASKED: " + userQuestion + "\n");
-            System.out.println("MAGIC 8-BALL SAYS: " + str + "\n");
+            System.out.println("Magic 8-Ball says: " + str);
 
             // Ask the user if they want to play again
             System.out.println("Do you have another question for the Magic 8-Ball? (y/n)");
             playAgain = input.nextLine();
-            System.out.println();
         }
 
         // Exit message
         System.out.println("Thank you for playing!");
         input.close();
         System.exit(0);
-
     }
 
 
