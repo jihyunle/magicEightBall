@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -24,7 +25,7 @@ public class magicEightBall {
 
             // Call magicEightBall method that will pick a random selection
             // from the String array of possible responses
-            String str = magicEightBall();
+            String str = modifiedMagicEight();
 
             // Print the statements
             System.out.println("YOU ASKED: " + userQuestion + "\n");
@@ -47,8 +48,7 @@ public class magicEightBall {
     public static String magicEightBall(){
 
         // Create an array of all possible responses
-        String[] str = new String[]{"It is certain", "It is decidedly so", "Without a Doubt", "Yes definitely",
-                "It is decidedly so", "Without a doubt", "Yes definitely", "You may rely on it",
+        String[] str = new String[]{"It is certain", "It is decidedly so", "Without a Doubt", "Yes definitely", "You may rely on it",
                 "As I see it, yes", "Most likely", "Outlook good", "Yes", "Signs point to yes", "Reply hazy try again",
                 "Ask again later", "Better not tell you now", "Cannot predict now", "Concentrate and ask again",
                 "Don't count on it", "My reply is no", "My sources say no", "Outlook not so good", "Very doubtful"};
@@ -62,5 +62,33 @@ public class magicEightBall {
         return str[number];
 
     }
+
+    public static String modifiedMagicEight(){
+        ArrayList<String> responses = new ArrayList<>();
+        responses.add("It is certain");
+        responses.add("It is decidedly so");
+        responses.add("Without a Doubt");
+        responses.add("Yes definitely");
+        responses.add("You may rely on it");
+        responses.add("As I see it, yes");
+        responses.add("Most likely");
+        responses.add("Outlook good");
+        responses.add("Yes");
+        responses.add("Signs point to yes");
+        responses.add("Reply hazy try again");
+        responses.add("Ask again later");
+        responses.add("Better not tell you now");
+        responses.add("Cannot predict now");
+        responses.add("Concentrate and ask again");
+        responses.add("Don't count on it");
+        responses.add("My reply is no");
+        responses.add("My sources say no");
+        responses.add("Outlook not so good");
+        responses.add("Very doubtful");
+
+        Random rnd = new Random();
+        return responses.get(rnd.nextInt(responses.size()));
+    }
+
 
 }
